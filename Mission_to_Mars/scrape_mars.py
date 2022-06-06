@@ -55,8 +55,8 @@ def scrape():
     
     # Using Pandas read_html to pull tables from galaxyfacts-mars.com
     mars_fact_url = 'https://galaxyfacts-mars.com'
-    mars_facts = pd.read_html(mars_fact_url)
-    mf = pd.DataFrame(mars_facts[1])
+    mars_facts = pd.read_html(mars_fact_url)[1]
+    mars_facts_html = mars_facts.to_html(index=False)
     
     ########################################## 
     ############ Mars Hemispheres ############
@@ -121,13 +121,13 @@ def scrape():
     # list comp to create hemisphere dictionary for each hemisphere
     hemisphere_data = [{'title': titles[n],'img_url': img_urls[n],'thumb': thumbnails[n]} for n in range(len(titles))]
 
-    browser.quit()
+    # browser.quit()
 
     # mars dict to export data
 
     mars = {
         'hemisphere_data': hemisphere_data,
-        'mars_facts': mf,
+        'mars_facts': mars_facts_html,
         'news_title': news_title,
         'news_p': news_p,
         'featured_img': featured_image_url,
