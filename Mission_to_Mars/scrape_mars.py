@@ -42,6 +42,7 @@ def scrape():
 
     # Grab HTML with BS
     soup2 = bs(browser.html, 'html.parser')
+    
     # narrow down results to get desired URL
     results2 = soup2.find('div', class_='floating_text_area')
     link = results2.find('a', class_='showimg fancybox-thumbs')['href']
@@ -60,11 +61,7 @@ def scrape():
     ########################################## 
     ############ Mars Hemispheres ############
     ##########################################
-    
-    # creating lists to store hemisphere names and images (incl. thumbnail)
-    titles = []
-    thumbnails = []
-    img_urls = []
+
     
     ########################################################################
     # Hemisphere function to grab relevant info and create hemisphere dict #
@@ -72,58 +69,69 @@ def scrape():
     # Dictionaries contain hemisphere name, image URL, thumbnail image     #
     ########################################################################
 
-    def hemispheres():
+    # creating lists to store hemisphere names and images (incl. thumbnail)
+    titles = []
+    thumbnails = []
+    img_urls = []
+    
+    # Grabbing high-res images and names for Mars hemispheres
+    marhem_url = "https://marshemispheres.com/"
+    browser.visit(marhem_url)
+    
+    # links list so that splinter has something to click on
+    links = []
+
+    # BeautifulSoup parsing, locating relevant info
+    hemsoup = bs(browser.html, 'html.parser')
+    hems = hemsoup.find_all('div', class_='item')
+    
+    # loop through all four hemispheres to grab their names and thumbnail images
+    for hem in hems:
+        # grab hemi title
+        title = hem.h3.text
         
-        # Grabbing high-res images and names for Mars hemispheres
-        marhem_url = "https://marshemispheres.com/"
+        # clickable link info appended to list
+        links.append(title)
+        
+        # formatting to remove 'Enhanced', appending to list as title
+        titles.append(title.replace(' Enhanced', ''))
+        
+        # locate thumbnail image for later use, append to list
+        thumb = hem.img['src']
+        thumb_url = f'https://marshemispheres.com/{thumb}'
+        thumbnails.append(thumb_url)
+    
+    # loop through links list, clicking links with splinter to grab image URL
+    for name in links:
+        # browser clicking and set up
+        browser.links.find_by_partial_text(name).click()
+        soup = bs(browser.html, 'html.parser')
+        
+        # finding relevant link information
+        hemi = soup.find('div', class_='downloads').find_all('li')
+        link = hemi[0].a['href']
+        
+        # formatting as a complete URL, appending to list
+        img_url = f'https://marshemispheres.com/{link}'
+        img_urls.append(img_url)
+        
+        # return browser to index to click next link
         browser.visit(marhem_url)
         
-        # links list so that splinter has something to click on
-        links = []
-
-        # BeautifulSoup parsing, locating relevant info
-        hemsoup = bs(browser.html, 'html.parser')
-        hems = hemsoup.find_all('div', class_='item')
-        
-        # loop through all four hemispheres to grab their names and thumbnail images
-        for hem in hems:
-            # grab hemi title
-            title = hem.h3.text
-            
-            # clickable link info appended to list
-            links.append(title)
-            
-            # formatting to remove 'Enhanced', appending to list as title
-            titles.append(title.replace(' Enhanced', ''))
-            
-            # locate thumbnail image for later use, append to list
-            thumb = hem.img['src']
-            thumb_url = f'https://marshemispheres.com/{thumb}'
-            thumbnails.append(thumb_url)
-        
-        
-        # loop through links list, clicking links with splinter to grab image URL
-        for name in links:
-            # browser clicking and set up
-            browser.links.find_by_partial_text(name).click()
-            soup = bs(browser.html, 'html.parser')
-            
-            # finding relevant link information
-            hemi = soup.find('div', class_='downloads').find_all('li')
-            link = hemi[0].a['href']
-            
-            # formatting as a complete URL, appending to list
-            img_url = f'https://marshemispheres.com/{link}'
-            img_urls.append(img_url)
-            
-            # return browser to index to click next link
-            browser.visit(marhem_url)
-
-    # Run hemispheres function to create hemisphere lists
-    hemispheres()
-    
     # list comp to create hemisphere dictionary for each hemisphere
-
     hemisphere_data = [{'title': titles[n],'img_url': img_urls[n],'thumb': thumbnails[n]} for n in range(len(titles))]
 
-    return hemisphere_data
+    browser.quit()
+
+    # mars dict to export data
+
+    mars = {
+        'hemisphere_data': hemisphere_data,
+        'mars_facts': mf,
+        'news_title': news_title,
+        'news_p': news_p,
+        'featured_img': featured_image_url,
+    }
+    
+    # Run hemispheres function to create hemisphere lists
+    return mars
