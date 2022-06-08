@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" id="logo">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6 logo">
+        <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+    <div class="row" id="header">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8 header">
+        <h3>Mission to Mars<h3>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+    <div class="row" id="box">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8 box">
+        <div class="row">
+          <div class="col-md-4" id="hemisphere">
+            <div class="hemispheres">
+              <img class="hemi" src={{mars.hemisphere_data[0]['thumb']}}></img>
+              <h4>{{mars.hemisphere_data[0]['title']}}</h4>
+            </div>
+            <div class="hemispheres">
+              <img class="hemi" src={{mars.hemisphere_data[1]['thumb']}}></img>
+              <h4>{{mars.hemisphere_data[1]['title']}}</h4>
+            </div>
+            <div class="hemispheres">
+              <img class="hemi" src={{mars.hemisphere_data[2]['thumb']}}></img>
+              <h4>{{mars.hemisphere_data[2]['title']}}</h4>
+            </div>
+            <div class="hemispheres">
+              <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
+              <h4>{{mars.hemisphere_data[3]['title']}}</h4>
+            </div>
+          </div>
+        <div class="col-md-8">
+          body
+        </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8 footer">
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+
+
+<!--        <h4 class="heading">{{mars.news_title}}</h4>
+        <small>{{mars.news_p}}</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <img class="hemi" src={{mars.hemisphere_data[0]['thumb']}}></img>
+          {{mars.hemisphere_data[0]['title']}}
+        </div>
+        <div>
+          <img class="hemi" src={{mars.hemisphere_data[1]['thumb']}}></img>
+          {{mars.hemisphere_data[1]['title']}}
+        </div>
+        <div>
+          <img class="hemi" src={{mars.hemisphere_data[2]['thumb']}}></img>
+          {{mars.hemisphere_data[2]['title']}}
+        </div>
+        <div>
+          <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
+          {{mars.hemisphere_data[3]['title']}}
+        </div>
+      </div>
+    </div>
+    -->
+
+  </div>
+</body>
+
+</html>
