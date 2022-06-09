@@ -1,0 +1,12 @@
+# ignore temp files
+temp/
+
+
+# ignore Mac DS_Store file
+**/.DS_Store
+
+
+# ignore jupyter notebook checkpoints
+**/.ipynb_checkpoints/
+
+**/__pycache__/
