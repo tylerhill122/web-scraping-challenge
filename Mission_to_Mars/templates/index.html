@@ -16,90 +16,75 @@
       <div class="col-md-3">
       </div>
       <div class="col-md-6 logo">
-        <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
+        <a href="/scrape">
+          <div class="container">
+            <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
+            <div class="centered">
+              SCRAPE MARS
+            </div>
+          </div>
+        </a>
       </div>
       <div class="col-md-3">
       </div>
     </div>
     <div class="row" id="header">
-      <div class="col-md-2">
+      <div class="col-md-1">
       </div>
-      <div class="col-md-8 header">
+      <div class="col-md-10 header">
         <h3>Mission to Mars<h3>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
       </div>
     </div>
     <div class="row" id="box">
-      <div class="col-md-2">
+      <div class="col-md-1">
       </div>
-      <div class="col-md-8 box">
+      <div class="col-md-10 box">
         <div class="row">
-          <div class="col-md-4" id="hemisphere">
+          <div class="col-md-4 hemisphere" id="hemisphere">
             <div class="hemispheres">
-              <img class="hemi" src={{mars.hemisphere_data[0]['thumb']}}></img>
+              <a href={{mars.hemisphere_data[0]['img_url']}} target="_blank"><img src={{mars.hemisphere_data[0]['thumb']}}></img></a>
               <h4>{{mars.hemisphere_data[0]['title']}}</h4>
             </div>
             <div class="hemispheres">
-              <img class="hemi" src={{mars.hemisphere_data[1]['thumb']}}></img>
+              <a href={{mars.hemisphere_data[1]['img_url']}} target="_blank"><img src={{mars.hemisphere_data[1]['thumb']}}></img></a>
               <h4>{{mars.hemisphere_data[1]['title']}}</h4>
             </div>
             <div class="hemispheres">
-              <img class="hemi" src={{mars.hemisphere_data[2]['thumb']}}></img>
+              <a href={{mars.hemisphere_data[2]['img_url']}} target="_blank"><img src={{mars.hemisphere_data[2]['thumb']}}></img></a>
               <h4>{{mars.hemisphere_data[2]['title']}}</h4>
             </div>
             <div class="hemispheres">
-              <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
+              <a href={{mars.hemisphere_data[3]['img_url']}} target="_blank"><img src={{mars.hemisphere_data[3]['thumb']}}></img></a>
               <h4>{{mars.hemisphere_data[3]['title']}}</h4>
             </div>
           </div>
-        <div class="col-md-8">
+        <div class="col-md-8" id="maincontent" style="padding:10px;padding-right:25px;">
           <h4 class="heading">{{mars.news_title}}</h4>
           <small>{{mars.news_p}}</small>
-          <img class="feat_img" src={{mars.featured_img}}></img>
+          <div>
+            <a href="{{mars.featured_img}}" target="_blank"><img class="feat_img" src={{mars.featured_img}}></img></a>
+          </div>
+          <div id="data table">
+            {{mars.mars_facts|safe}}
+          </div>
         </div>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-2">
+    <div class="row" id="footer">
+      <div class="col-md-1">
       </div>
-      <div class="col-md-8 footer">
+      <div class="col-md-10 footer">
+        Tyler Hill
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
       </div>
     </div>
   </div>
-
-
-<!--        <h4 class="heading">{{mars.news_title}}</h4>
-        <small>{{mars.news_p}}</small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div>
-          <img class="hemi" src={{mars.hemisphere_data[0]['thumb']}}></img>
-          {{mars.hemisphere_data[0]['title']}}
-        </div>
-        <div>
-          <img class="hemi" src={{mars.hemisphere_data[1]['thumb']}}></img>
-          {{mars.hemisphere_data[1]['title']}}
-        </div>
-        <div>
-          <img class="hemi" src={{mars.hemisphere_data[2]['thumb']}}></img>
-          {{mars.hemisphere_data[2]['title']}}
-        </div>
-        <div>
-          <img class="hemi" src={{mars.hemisphere_data[3]['thumb']}}></img>
-          {{mars.hemisphere_data[3]['title']}}
-        </div>
-      </div>
-    </div>
-    -->
-
   </div>
 </body>
 
