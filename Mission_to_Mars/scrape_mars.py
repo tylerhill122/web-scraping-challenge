@@ -94,7 +94,7 @@ def scrape():
         links.append(title)
         
         # formatting to remove 'Enhanced', appending to list as title
-        titles.append(title.replace(' Enhanced', ''))
+        titles.append(title.replace(' Hemisphere Enhanced', ''))
         
         # locate thumbnail image for later use, append to list
         thumb = hem.img['src']
@@ -121,7 +121,7 @@ def scrape():
     # list comp to create hemisphere dictionary for each hemisphere
     hemisphere_data = [{'title': titles[n],'img_url': img_urls[n],'thumb': thumbnails[n]} for n in range(len(titles))]
 
-    # browser.quit()
+    browser.quit()
 
     # mars dict to export data
 
