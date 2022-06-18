@@ -11,7 +11,8 @@ h3 {
     display: flex;
     justify-content: center;
     border-radius: 15px 15px 0px 0px;
-    background: #000
+    background: -webkit-linear-gradient(black, #784242);
+    color:#a54848;
 }
 
 .container {
@@ -51,7 +52,7 @@ h3 {
 
 .hemispheres {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     color: #a37a6d;
     padding: 10px;
 
@@ -63,8 +64,15 @@ h3 {
     padding: 10px;
 }
 
+.box_contain_head {
+    background: -webkit-linear-gradient(black, #784242);
+    border-radius: 15px 15px 0px 0px;
+    padding:10px;
+    text-align: center;
+}
+
 .hemi_contain_head {
-    background-color: #784242;
+    background: -webkit-linear-gradient(#784242, black);
     border-radius: 15px 15px 0px 0px;
     padding:10px;
     text-align: center;
@@ -77,7 +85,7 @@ h3 {
 }
 
 .hemi_contain h3 {
-    font-size: medium;
+    font-size: 14px;
 }
 
 .hemi_contain_box {
@@ -96,15 +104,14 @@ h3 {
 
 .header {
     color: #784242;
-    background: rgb(156, 119, 119);
+    background: #9c7777;
     border-radius: 15px 15px 0px 0px;
-    padding: 15px;
+    padding:15px;
 }
 
 .box {
     color: #bf7341;
     background: rgb(156, 119, 119);
-    padding: 25px;
 }
 
 .footer {
@@ -123,15 +130,7 @@ h3 {
     width: 50px;
 }
 
-img {
-    border: 2px solid #000;
-}
-
 .feat_img {
     max-width:100%;
     max-height:100%;
-}
-
-.logo {
-    color:#a54848
 }
