@@ -25,13 +25,15 @@ def scrape():
     # narrow down results to find article title and description #
     results = soup.find_all('div', id='news')
     for result in results:
-        news_title = soup.find('div', class_='content_title').text
-        news_p = soup.find('div', class_='article_teaser_body').text
-        
-        print(news_title)
-        print('-'*50)
-        print(news_p)
-     
+        try:
+            news_title = soup.find('div', class_='content_title').text
+            news_p = soup.find('div', class_='article_teaser_body').text
+            print(news_title)
+            print('-'*50)
+            print(news_p)
+        except: 
+            pass        
+
     ########################################## 
     ## JPL Mars Space Images—Featured Image ##
     ##########################################
@@ -56,7 +58,7 @@ def scrape():
     # Using Pandas read_html to pull tables from galaxyfacts-mars.com
     mars_fact_url = 'https://galaxyfacts-mars.com'
     mars_facts = pd.read_html(mars_fact_url)[1]
-    mars_facts_html = mars_facts.to_html(index=False)
+    mars_facts_html = mars_facts.to_html(index=False, header=False)
     
     ########################################## 
     ############ Mars Hemispheres ############
@@ -120,11 +122,11 @@ def scrape():
         
     # list comp to create hemisphere dictionary for each hemisphere
     hemisphere_data = [{'title': titles[n],'img_url': img_urls[n],'thumb': thumbnails[n]} for n in range(len(titles))]
-
+    
+    # close splinter browser
     browser.quit()
 
     # mars dict to export data
-
     mars = {
         'hemisphere_data': hemisphere_data,
         'mars_facts': mars_facts_html,
@@ -133,5 +135,4 @@ def scrape():
         'featured_img': featured_image_url,
     }
     
-    # Run hemispheres function to create hemisphere lists
     return mars
