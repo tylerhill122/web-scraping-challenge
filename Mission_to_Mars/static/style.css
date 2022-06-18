@@ -67,6 +67,7 @@ h3 {
     background-color: #784242;
     border-radius: 15px 15px 0px 0px;
     padding:10px;
+    text-align: center;
 }
 
 .hemi_contain {
@@ -80,6 +81,14 @@ h3 {
 }
 
 .hemi_contain_box {
+    background-color: #784242;
+    border-radius: 0px 0px 0px 0px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+}
+
+.hemi_contain_footer {
     background-color: #784242;
     border-radius: 0px 0px 15px 15px;
     padding:10px;
@@ -106,6 +115,12 @@ h3 {
     display: flex;
     justify-content: center;
     margin-bottom:50px;
+}
+
+.footer img {
+    border:0px;
+    height:50px;
+    width: 50px;
 }
 
 img {

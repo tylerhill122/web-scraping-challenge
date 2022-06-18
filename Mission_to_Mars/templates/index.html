@@ -65,16 +65,20 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8" id="maincontent" style="padding:10px;padding-right:25px;">
+          <div class="col-md-8 hemisphere" id="maincontent">
             <div class="hemi_contain_head">
               <h4 class="heading">{{mars.news_title}}</h4>
               <small>{{mars.news_p}}</small>
             </div>
             <div class="hemi_contain_box">
               <a href="{{mars.featured_img}}" target="_blank"><img class="feat_img" src={{mars.featured_img}}></img></a>
-              <div id="data table">
+            </div>
+            <div class="hemi_contain_box">
+              <div class="table table-striped" id="data table">
                 {{mars.mars_facts|safe}}
               </div>
+            </div>
+            <div class="hemi_contain_footer">
             </div>
           </div>
         </div>
@@ -86,6 +90,7 @@
       <div class="col-md-1">
       </div>
       <div class="col-md-10 footer">
+        <a href="https://github.com/tylerhill122/" target="_blank"><img src="{{ url_for('static', filename='github.png') }}" title="Go to my GitHub page!"></a>
         Tyler Hill
       </div>
       <div class="col-md-1">
