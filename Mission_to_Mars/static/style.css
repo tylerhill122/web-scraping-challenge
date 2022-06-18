@@ -136,3 +136,12 @@ h3 {
     max-width:100%;
     max-height:100%;
 }
+
+.data_table {
+    color:#9c7777;
+}
+
+.data_table th, td {
+    padding:15px;
+    text-align: left;
+}
