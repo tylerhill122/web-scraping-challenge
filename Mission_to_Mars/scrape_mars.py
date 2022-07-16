@@ -31,7 +31,7 @@ def scrape():
             print(news_title)
             print('-'*50)
             print(news_p)
-        except: 
+        except:
             pass        
 
     ########################################## 
