@@ -2,7 +2,9 @@
 
 ## Instructions 
 
-The instructions for this assignment are divided into two parts: 
+The purpose of this repository is to build a Python-Flask app to scrape Mars information from the web and store the results in a MongoDB database. The results are then displayed in an HTML/CSS webpage.
+
+The app required two methods:
 
 1. Scraping 
 
@@ -10,10 +12,8 @@ The instructions for this assignment are divided into two parts:
 
 ## Part 1: Scraping
 
-Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
-
-* Create a Jupyter Notebook file called `mission_to_mars.ipynb`. Use this file to complete all your scraping and analysis tasks. The following information outlines what you need to scrape.
+The initial scraping is performed using a Python-based app developed using Jupyter Notebook and making use of Python dependencies including BeautifulSoup, Pandas, and Requests/Splinter.
 
 ## Part 2: MongoDB and Flask Application
 
-Use MongoDB with Flask templating to create a new HTML page that displays all the information that was scraped from the URLs above.
+The data scraped from the web is then inserted into a MongoDB database and the results are displayed using Flask templating to create a new HTML page that displays all the information that was scraped from web.
