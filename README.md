@@ -1,4 +1,4 @@
-# web-scraping-challenge - Tyler Hill
+# Mars Web Scraping - Tyler Hill
 
 <img src="main.png">
 
