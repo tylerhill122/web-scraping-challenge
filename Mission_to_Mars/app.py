@@ -9,9 +9,9 @@ password = config.password
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-# app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
 
-app.config["MONGO_URI"] = f"mongodb+srv://{user}:{password}@cluster0.ktiq9dt.mongodb.net/?retryWrites=true&w=majority"
+# app.config["MONGO_URI"] = f"mongodb+srv://{user}:{password}@cluster0.ktiq9dt.mongodb.net/?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
 
