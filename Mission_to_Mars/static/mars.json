@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "631673f253082a064b4f20bb"
+  },
+  "featured_img": "https://spaceimages-mars.com/image/featured/mars2.jpg",
+  "hemisphere_data": [
+    {
+      "title": "Cerberus",
+      "img_url": "https://marshemispheres.com/images/full.jpg",
+      "thumb": "https://marshemispheres.com/images/39d3266553462198bd2fbc4d18fbed17_cerberus_enhanced.tif_thumb.png"
+    },
+    {
+      "title": "Schiaparelli",
+      "img_url": "https://marshemispheres.com/images/schiaparelli_enhanced-full.jpg",
+      "thumb": "https://marshemispheres.com/images/08eac6e22c07fb1fe72223a79252de20_schiaparelli_enhanced.tif_thumb.png"
+    },
+    {
+      "title": "Syrtis Major",
+      "img_url": "https://marshemispheres.com/images/syrtis_major_enhanced-full.jpg",
+      "thumb": "https://marshemispheres.com/images/55a0a1e2796313fdeafb17c35925e8ac_syrtis_major_enhanced.tif_thumb.png"
+    },
+    {
+      "title": "Valles Marineris",
+      "img_url": "https://marshemispheres.com/images/valles_marineris_enhanced-full.jpg",
+      "thumb": "https://marshemispheres.com/images/4e59980c1c57f89c680c0e1ccabbeff1_valles_marineris_enhanced.tif_thumb.png"
+    }
+  ],
+  "mars_facts": "<table border=\"1\" class=\"dataframe\">\n  <tbody>\n    <tr>\n      <td>Equatorial Diameter:</td>\n      <td>6,792 km</td>\n    </tr>\n    <tr>\n      <td>Polar Diameter:</td>\n      <td>6,752 km</td>\n    </tr>\n    <tr>\n      <td>Mass:</td>\n      <td>6.39 × 10^23 kg (0.11 Earths)</td>\n    </tr>\n    <tr>\n      <td>Moons:</td>\n      <td>2 ( Phobos &amp; Deimos )</td>\n    </tr>\n    <tr>\n      <td>Orbit Distance:</td>\n      <td>227,943,824 km (1.38 AU)</td>\n    </tr>\n    <tr>\n      <td>Orbit Period:</td>\n      <td>687 days (1.9 years)</td>\n    </tr>\n    <tr>\n      <td>Surface Temperature:</td>\n      <td>-87 to -5 °C</td>\n    </tr>\n    <tr>\n      <td>First Record:</td>\n      <td>2nd millennium BC</td>\n    </tr>\n    <tr>\n      <td>Recorded By:</td>\n      <td>Egyptian astronomers</td>\n    </tr>\n  </tbody>\n</table>",
+  "news_p": "Along with capturing an image before its steepest ascent ever, the robotic explorer filmed its \"selfie stick,\" or robotic arm, in action.",
+  "news_title": "NASA's Curiosity Mars Rover Takes a New Selfie Before Record Climb"
+}]
